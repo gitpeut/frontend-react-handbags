@@ -13,10 +13,14 @@ function Tile({image, title, paragraphs}) {
     return (
         <section>
             <h2>{title}</h2>
-            {paragraphs.map(tekst => <p key={tekst.id}>{tekst.id}{tekst}</p>)}
+            {/*for some reason this works too, but I cant find any docs on map inputting an object with the id attribute */}
+            {/*{paragraphs.map( (tekst =><p key={tekst.id}>{tekst.id}{tekst}</p> )  }*/}
+            {paragraphs.map( (tekst,id) =><p key={'tekst'+id}>{id}{tekst}</p> )  }
         </section>
     )
 
 }
 
 export default Tile;
+
+
